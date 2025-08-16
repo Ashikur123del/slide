@@ -1,46 +1,43 @@
- var swiper = new Swiper(".swiper-container", {
-        slidesPerView: 5,
-        spaceBetween: 10,
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-       
-        breakpoints: {
-           
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-            },
-            
-            576: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-           
-            992: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            
-            1200: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-            },
-            
-            1400: {
-                slidesPerView: 5,
-                spaceBetween: 30,
-            }
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+  
+    // Sidebar toggle (mobile)
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('backdrop');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    if(toggleBtn){
+      toggleBtn.addEventListener('click', ()=>{ sidebar.classList.toggle('show'); backdrop.classList.toggle('show'); });
+      backdrop.addEventListener('click', ()=>{ sidebar.classList.remove('show'); backdrop.classList.remove('show'); });
+    }
 
+    // Students Pie Chart
+    const ctx = document.getElementById('studentsPie');
+    if(ctx){
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Males','Females','Others'],
+          datasets: [{
+            data: [55, 46, 0],
+            borderWidth: 0,
+          }]
+        },
+        options: {
+          plugins: { legend: { position: 'bottom' } },
+          cutout: '65%'
+        }
+      });
+    }
+
+    document.querySelectorAll('.sidebar-menu .has-sub').forEach(menu => {
+    menu.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelectorAll('.submenu').forEach(sub => {
+        if (sub !== menu.nextElementSibling) {
+          sub.classList.remove('show');
+          sub.previousElementSibling.classList.remove('active');
+        }
+      });
+      menu.classList.toggle('active');
+      menu.nextElementSibling.classList.toggle('show');
+    });
+  });
+  
