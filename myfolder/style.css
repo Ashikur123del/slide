@@ -1,154 +1,45 @@
+/* 
+.container{
+    width: 500px;
+    margin: 200px auto;
+    text-align: center;
+}
 
-    :root{
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --muted: #667085;
-      --primary: #2e90fa;
-      --success: #16a34a;
-      --warning: #eab308;
-      --danger: #ef4444;
-      --blue-50: #eaf4ff;
-      --green-50:#eaf8f0;
-      --pink-50:#ffeff2;
-    }
-    html,body{height:100%;}
-    body{font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji'; background: var(--bg);}  
+#counter{
+    font-size: 25px;
+    margin-bottom: 50px;
+}
 
-    /* Layout */
-    .app{
-      display:grid;
-       grid-template-columns: 270px 1fr; 
-       min-height:100vh;
-      }
-    .sidebar{background:#fff;
-       border-right:1px solid #eef2f7; 
-       position:sticky; top:0; height:100vh; 
-       overflow:auto;
-      }
-    .brand{
-      gap:.5rem;
-    }
 
-    .sm{
-      background-color: #0b5ed7;
-      color: #fff;
-      border-radius: 50px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
+button{
+    font-size: 20px;
+   padding:8px 50px;
+   margin: 10px; 
+}
+button:default{
+    opacity: 0.5;
+    cursor: not-allowed;
+} */
 
-    .sm small{
-      font-size: 12px;
-    }
-    .brand img{
-      height:38px;
-       width:38px; 
-       object-fit:cover;
-      }
-    .nav-link{color:#0f172a;
-       font-weight:500; 
-       border-radius:10px;
-      }
-    .nav-link i{
-      font-size:1.1rem;
-       width:22px;
-      }
-    .nav-link.active, .nav-link:hover{
-      background:#f1f5ff;
-      color:#0b5ed7;
-    }
+body{
+    text-align: center;
+    font-family: Arial,  sans-serif;
+}
+#colorBox{
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
 
-    .content{
-      min-height:100vh;
-    }
-    .navbar{background:#fff;
-       border-bottom:1px solid #eef2f7;
-      }
 
-    .section-title{
-      font-size:14px;
-       letter-spacing:.08em;
-        text-transform:uppercase;
-         color:var(--muted);
-        }
-
-    /* Cards */
-    .stat-card{border:0;
-       box-shadow:0 1px 0 rgba(16,24,40,.04), 0 2px 8px rgba(16,24,40,.06);
-        border-radius:18px;
-      }
-    .stat-card .icon{height:42px;
-       width:42px; 
-       display:flex; 
-       align-items:center; 
-       justify-content:center; 
-       border-radius:12px;
-      }
-    .stat-card .label{
-      color:#475467;
-       font-size:14px;
-      }
-    .stat-card .value{
-      font-weight:700;
-       font-size:22px;
-        color:#101828;
-      }
-
-    .card-blue{
-      background:var(--blue-50);
-    }
-    .card-green{
-      background:var(--green-50);
-    }
-    .card-pink{
-      background:var(--pink-50);
-    }
-
-    /* Chart + widgets */
-    .widget-card{border:0; 
-      border-radius:18px;
-       box-shadow:0 1px 0 rgba(16,24,40,.04), 0 2px 8px rgba(16,24,40,.06);
-      }
-
-    .submenu {
-       display: none;
-       }
-  .submenu.show {
-     display: block;
-     }
-  .nav-link { 
-    display: flex;
-     align-items: center;
-      gap: 8px; cursor: pointer;
-     }
-  .nav-link i:last-child {
-     transition: transform .3s;
-     }
-  .nav-link.active i:last-child {
-     transform: rotate(180deg);
-    }
-    /* Responsive */
-    @media (max-width: 992px){
-      .app{
-        grid-template-columns: 1fr;
-      }
-      .sidebar{
-        position:fixed;
-         left:-300px;
-          width:270px;
-           transition: all .3s ease;
-          }
-      .sidebar.show{
-        left:0;
-      }
-      .backdrop{
-        position:fixed; 
-        inset:0;
-         background:rgba(0,0,0,.25);
-          display:none;
-        }
-      .backdrop.show{
-        display:block;
-      }
-    }
-  CSDCDSC
+#copyButton{
+    background-color: rgb(0, 128, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#copyButton:hover{
+    background-color:rgba(11, 168, 11, 0.959) ;
+}
